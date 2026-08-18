@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora para Importadores</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header>
+  <h1>Calculadora para Importadores</h1>
+  <p>Simule o custo total de importação com frete, seguro, II e ICMS</p>
+</header>
+
+<main>
+
+  <section class="bloco">
+    <h2>1. Cotação e Impostos</h2>
+    <div class="linha">
+      <div class="campo">
+        <label for="txtcambio">Cotação do Dólar (R$)</label>
+        <input type="number" id="txtcambio" step="0.01" value="5.20">
+      </div>
+      <div class="campo">
+        <label for="txtii">Alíquota II (%)</label>
+        <input type="number" id="txtii" step="0.01" value="60">
+      </div>
+      <div class="campo">
+        <label for="txticms">Alíquota ICMS (%)</label>
+        <input type="number" id="txticms" step="0.01" value="17">
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco">
+    <h2>2. Produtos</h2>
+    <div class="linha">
+      <div class="campo">
+        <label for="txtnome">Nome do produto</label>
+        <input type="text" id="txtnome" placeholder="Ex: Fone de ouvido">
+      </div>
+      <div class="campo">
+        <label for="txtvalor">Valor unitário (US$)</label>
+        <input type="number" id="txtvalor" step="0.01" placeholder="0.00">
+      </div>
+      <div class="campo">
+        <label for="txtqtd">Quantidade</label>
+        <input type="number" id="txtqtd" step="1" value="1">
+      </div>
+      <div class="campo campo-btn">
+        <button onclick="adicionarProduto()">+ Adicionar item</button>
+      </div>
+    </div>
+
+    <table id="tabprodutos">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Qtd</th>
+          <th>Valor unit. (US$)</th>
+          <th>Subtotal (US$)</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="corpotabela"></tbody>
+    </table>
+  </section>
+
+  <section class="bloco">
+    <h2>3. Frete e Seguro</h2>
+    <div class="linha">
+      <div class="campo">
+        <label for="txtfrete">Frete internacional (US$)</label>
+        <input type="number" id="txtfrete" step="0.01" value="0">
+      </div>
+      <div class="campo">
+        <label for="txtseguro">Seguro (US$)</label>
+        <input type="number" id="txtseguro" step="0.01" value="0">
+      </div>
+    </div>
+  </section>
+
+  <div class="acoes">
+    <button class="btn-calcular" onclick="calcular()">Calcular custo de importação</button>
+  </div>
+
+  <div id="res"></div>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Calculadora para Importadores. Todos os direitos reservados.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
