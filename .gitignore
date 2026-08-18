@@ -1,0 +1,16 @@
+# Ignorar uma pasta inteira
+node_modules/
+build/
+dist/
+
+# Ignorar arquivos específicos por extensão
+*.log
+*.tmp
+.env
+
+# Ignorar arquivos em qualquer diretório com um nome específico
+.DS_Store
+Thumbs.db
+
+# Exceção: não ignorar um arquivo específico dentro de uma pasta ignorada
+!config.example.json
